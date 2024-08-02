@@ -1,0 +1,216 @@
+html,
+body {
+	height: 100%;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background: linear-gradient(45deg, #c98ef0, #adffcd);
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.main {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.section {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.todo-container {
+	width: 80%;
+	max-width: 500px;
+	min-height: 80%;
+	max-height: 500px;
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
+	/* background: linear-gradient(45deg, #c98ef0, #adffcd); */
+	background-color: transparent;
+	color: currentColor;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	border-radius: 20px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.todo-container::-webkit-scrollbar {
+	width: 8px;
+}
+
+.todo-container::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
+
+/* .todo-container::-webkit-scrollbar-track {
+	background-color: white;
+	border-radius: 10px;
+} */
+
+.title {
+	margin: 0;
+	margin-bottom: 8px;
+	background: linear-gradient(45deg, #627aa7, #3a9993);
+	background-clip: text;
+	color: transparent;
+	/* position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: -100px; */
+}
+
+.input-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box;
+}
+.input {
+	width: 90%;
+	padding: 10px;
+	border-radius: 8px;
+	box-sizing: border-box;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	border: none;
+	outline-color: #3a9993;
+	outline: none;
+	resize: none;
+}
+.input:hover,
+.input:focus {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.46);
+}
+
+.btn {
+	width: 20%;
+	height: 50px;
+	cursor: pointer;
+	padding: 10px;
+	/* background: linear-gradient(45deg, #627aa7, #3a9993); */
+	background-color: transparent;
+	color: currentColor;
+	border: none;
+	/* border: 1px solid #070707; */
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	border-radius: 8px;
+	outline-color: #3a9993;
+	outline: none;
+}
+
+.btn:hover,
+.btn:focus {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 6px 6px rgba(0, 0, 0, 0.46);
+}
+.add-btn {
+}
+.todo-list {
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.todo-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	box-sizing: border-box;
+}
+
+.todo-text-container {
+	margin-right: 10px;
+	width: 80%;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	overflow-wrap: break-word; /* Переносить довгі слова, щоб уникнути переповнення */
+	word-break: break-word; /* Переносить слова, якщо це необхідно */
+	width: 100%; /* Забезпечує, що контейнер використовує всю доступну ширину */
+}
+@media screen and (max-width: 768px) {
+	.todo-text-container {
+		flex-wrap: wrap;
+	}
+}
+
+.todo-text {
+	overflow-wrap: break-word; /* Переносить довгі слова, щоб уникнути переповнення */
+	word-break: break-word; /* Переносить слова, якщо це необхідно */
+	display: block; /* Встановлює блоковий елемент, що дозволяє переносити текст */
+}
+
+.todo-date {
+	color: gray;
+	font-size: 0.8em;
+}
+
+.todo-time {
+	color: gray;
+	font-size: 0.8em;
+}
+
+.edited {
+	color: gray;
+	font-size: 0.6em;
+	opacity: 0.5;
+	align-self: flex-end;
+	margin-top: 5px;
+}
+
+.delete-btn {
+	color: white;
+	background-color: transparent;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.delete-btn:hover {
+}
+
+.delete-btn img {
+	width: 24px;
+	height: 24px;
+	transition: transform 0.2s ease-in-out;
+}
+.delete-btn img:hover {
+	transform: scale(1.2);
+}
+
+.checked {
+	text-decoration: line-through;
+}
+
+.edit-btn {
+	background-color: #f0f0f0;
+	border: none;
+	padding: 5px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.button-container {
+	display: flex;
+	gap: 5px;
+	margin-left: 10px;
+}
